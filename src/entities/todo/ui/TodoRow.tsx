@@ -1,6 +1,8 @@
 import RemoveTodo from "../../../features/todo/RemoveTodo";
 import ToggleTodo from "../../../features/todo/ToggleTodo";
 
+// WARNING: This component might break the fsd convention but find it more convinient to use features here
+
 type Props = {
   id: number;
   text: string;

@@ -32,7 +32,7 @@ const todoSlice = createSlice({
   reducers: {
     createtodo: (state, { payload }: PayloadAction<string>) => {
       const id = state.todos.length;
-      state.todos.push({ id, text: payload, done: false });
+      state.todos.unshift({ id, text: payload, done: false });
     },
     removetodo: (state, { payload }: PayloadAction<number>) => {
       const i = state.todos.findIndex((todo) => todo.id === payload);

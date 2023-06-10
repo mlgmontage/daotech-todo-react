@@ -22,10 +22,9 @@
 
 - [x] Filtering todo by `completed/uncompleted`
 - [x] Counter for `completed/uncompleted`
-- [ ] Pagination
+- [x] Pagination
 
 ## Middle+
 
-- [ ] Publish app
-- [ ] Backend API
+- [x] Publish app
 - [ ] Animate create/delete
