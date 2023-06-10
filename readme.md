@@ -21,7 +21,7 @@
 ## Middle
 
 - [x] Filtering todo by `completed/uncompleted`
-- [ ] Counter for `completed/uncompleted`
+- [x] Counter for `completed/uncompleted`
 - [ ] Pagination
 
 ## Middle+

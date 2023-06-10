@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSelector, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../../../app/store";
 import { useSelector } from "react-redux";
 
@@ -55,7 +55,7 @@ export default todoSlice.reducer;
 export const { createtodo, removetodo, toggletodo, setmode, setview } =
   todoSlice.actions;
 
-export const todosSelector = (state: RootState) => {
+export const todosFilteredSelector = (state: RootState) => {
   if (state.todos.view === "todo")
     return state.todos.todos.filter((todo) => todo.done === false);
 
@@ -68,4 +68,14 @@ export const todosSelector = (state: RootState) => {
 export const todosViewSelector = (state: RootState) => state.todos.view;
 export const todosModeSelector = (state: RootState) => state.todos.mode;
 export const useTodo = (id: number) =>
-  useSelector(todosSelector).find((todo) => todo.id === id);
+  useSelector(todosFilteredSelector).find((todo) => todo.id === id);
+
+export const todosCounterSelector = createSelector(
+  (state: RootState) => state.todos.todos,
+  (todos) => {
+    const todo = todos.filter((todo) => todo.done === false).length;
+    const done = todos.filter((todo) => todo.done === true).length;
+
+    return [todo, done];
+  }
+);

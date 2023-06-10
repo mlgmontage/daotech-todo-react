@@ -1,21 +1,26 @@
 import { useSelector } from "react-redux";
 import TodoRow from "../entities/todo/ui/TodoRow";
 import CreateTodo from "../features/todo/CreateTodo";
-import { todosModeSelector, todosSelector } from "../entities/todo/model";
+import {
+  todosModeSelector,
+  todosFilteredSelector,
+} from "../entities/todo/model";
 import FilterTodo from "../features/todo/FilterTodo";
 import ViewMode from "../features/todo/ViewMode";
 import TodoCard from "../entities/todo/ui/TodoCard";
+import TodoCounter from "../entities/todo/ui/TodoCounter";
 
 const Todo = () => {
-  const todos = useSelector(todosSelector);
+  const todos = useSelector(todosFilteredSelector);
   const mode = useSelector(todosModeSelector);
 
   return (
     <>
       <div className="p-1 bg-blue">
-        <div className="filters-container flex gap-1">
+        <div className="filters-container flex gap-1 items-center">
           <FilterTodo />
           <ViewMode />
+          <TodoCounter />
         </div>
       </div>
 
