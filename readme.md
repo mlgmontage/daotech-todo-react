@@ -16,15 +16,21 @@
 - [x] Character limit for todo
 - [x] Toggling todo `completed/uncompleted`
 - [x] Feature-sliced design
-- [x] Add view-mode table/cards
+- [x] Add view-mode `table/cards`
+- [x] Counter for `completed/uncompleted`
 
 ## Middle
 
 - [x] Filtering todo by `completed/uncompleted`
-- [x] Counter for `completed/uncompleted`
 - [x] Pagination
+- [ ] Todo details
+  - [ ] Importance level
+  - [ ] Description
+  - [ ] End date
+  - [ ] Start date
 
 ## Middle+
 
 - [x] Publish app
+- [ ] Drag-n-drop
 - [ ] Animate create/delete
