@@ -53,6 +53,11 @@ button {
   border-radius: 3px;
 }
 
+.active {
+  color: var(--bg);
+  background-color: var(--foreground);
+}
+
 .container {
   width: var(--container-width);
   background-color: var(--blue);

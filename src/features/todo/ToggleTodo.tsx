@@ -9,6 +9,8 @@ const ToggleTodo: React.FC<Props> = ({ id }) => {
   const dispatch = useDispatch();
   const todo = useTodo(id);
 
+  if (!todo) return <div>Panic: Error occured!!!</div>;
+
   return (
     <input
       type="checkbox"

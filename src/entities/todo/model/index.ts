@@ -2,34 +2,70 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../../../app/store";
 import { useSelector } from "react-redux";
 
-type TodoState = {
+type TodoT = {
+  id: number;
   text: string;
   done: boolean;
-}[];
+};
 
-const initialState: TodoState = [
-  { text: "write some code", done: true },
-  { text: "wash dishes", done: false },
-];
+type ViewT = "all" | "todo" | "done";
+type ModeT = "list" | "card";
+
+type TodoState = {
+  todos: TodoT[];
+  view: ViewT;
+  mode: ModeT;
+};
+
+const initialState: TodoState = {
+  todos: [
+    { id: 0, text: "write some code", done: true },
+    { id: 1, text: "wash dishes", done: false },
+  ],
+  view: "all",
+  mode: "list",
+};
 
 const todoSlice = createSlice({
   initialState,
   name: "todo",
   reducers: {
     createtodo: (state, { payload }: PayloadAction<string>) => {
-      state.push({ text: payload, done: false });
+      const id = state.todos.length;
+      state.todos.push({ id, text: payload, done: false });
     },
     removetodo: (state, { payload }: PayloadAction<number>) => {
-      state.splice(payload, 1);
+      const i = state.todos.findIndex((todo) => todo.id === payload);
+      state.todos.splice(i, 1);
     },
     toggletodo: (state, { payload }: PayloadAction<number>) => {
-      state[payload].done = !state[payload].done;
+      const i = state.todos.findIndex((todo) => todo.id === payload);
+      state.todos[i].done = !state.todos[payload].done;
+    },
+    setview: (state, { payload }: PayloadAction<ViewT>) => {
+      state.view = payload;
+    },
+    setmode: (state, { payload }: PayloadAction<ModeT>) => {
+      state.mode = payload;
     },
   },
 });
 
 export default todoSlice.reducer;
-export const { createtodo, removetodo, toggletodo } = todoSlice.actions;
+export const { createtodo, removetodo, toggletodo, setmode, setview } =
+  todoSlice.actions;
 
-export const todosSelector = (state: RootState) => state.todos;
-export const useTodo = (id: number) => useSelector(todosSelector)[id];
+export const todosSelector = (state: RootState) => {
+  if (state.todos.view === "todo")
+    return state.todos.todos.filter((todo) => todo.done === false);
+
+  if (state.todos.view === "done")
+    return state.todos.todos.filter((todo) => todo.done === true);
+
+  return state.todos.todos;
+};
+
+export const todosViewSelector = (state: RootState) => state.todos.view;
+export const todosModeSelector = (state: RootState) => state.todos.mode;
+export const useTodo = (id: number) =>
+  useSelector(todosSelector).find((todo) => todo.id === id);

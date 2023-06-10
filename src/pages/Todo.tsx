@@ -20,8 +20,8 @@ const Todo = () => {
       <div className="container">
         <h1 className="center">TODO</h1>
         <CreateTodo />
-        {todos.map((todo, i) => (
-          <TodoRow text={todo.text} id={i} key={i} />
+        {todos.map((todo) => (
+          <TodoRow text={todo.text} id={todo.id} key={todo.id} />
         ))}
       </div>
     </>
