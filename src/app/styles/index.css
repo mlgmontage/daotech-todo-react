@@ -1,10 +1,17 @@
+@import url("./utils.css");
+
 * {
   box-sizing: border-box;
 }
 
+/* Variables for customizing design */
 :root {
   --ff: "Courier New", Courier, monospace;
-  --fz: 16px;
+  --fsecondary: "Times New Roman", Times, serif;
+  --fz: 20px;
+
+  /* Sizing */
+  --container-width: 840px;
 }
 
 body {
@@ -13,3 +20,28 @@ body {
   font-size: var(--fz);
   font-family: var(--ff);
 }
+
+input,
+textarea,
+button {
+  font-family: inherit;
+  font-size: var(--fz);
+}
+
+.container {
+  width: var(--container-width);
+  margin-top: 5rem;
+  margin-inline: auto;
+  display: flow-root;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--fsecondary);
+}
+
+/* Fields */

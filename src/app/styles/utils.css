@@ -1,0 +1,49 @@
+/* Tailwind style compositinal css utils for styling and development */
+
+.flex {
+  display: flex;
+}
+
+.grid {
+  display: grid;
+}
+
+.block {
+  display: block;
+}
+
+/* Text */
+.center {
+  text-align: center;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+/* Sizing */
+.w-full {
+  width: 100%;
+}
+
+/* Spacing */
+.p-1 {
+  padding: 1rem;
+}
+
+.gap-1 {
+  gap: 1rem;
+}
+
+/* Dev-only */
+.lined-blue {
+  outline: 1px solid blue;
+}
+
+.lined-red {
+  outline: 1px solid red;
+}
+
+.lined-yellow {
+  outline: 1px solid yellow;
+}
