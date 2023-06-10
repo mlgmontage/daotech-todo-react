@@ -6,8 +6,8 @@
 
 ## Junior
 
-- [ ] Create todo
-- [ ] Todo list
+- [x] Create todo
+- [x] Todo list
 - [ ] Remove todos
 - [ ] Use state manager
 
