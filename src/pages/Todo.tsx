@@ -11,7 +11,7 @@ const Todo = () => {
       <h1 className="center underline">Todo</h1>
       <CreateTodo />
       {todos.map((todo, i) => (
-        <TodoRow text={todo.text} key={i} />
+        <TodoRow text={todo.text} id={i} key={i} />
       ))}
     </div>
   );
