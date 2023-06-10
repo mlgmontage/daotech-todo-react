@@ -1,11 +1,8 @@
 import Todo from "../pages/Todo";
+import { withProviders } from "./providers/with-providers";
 
 function App() {
-  return (
-    <>
-      <Todo />
-    </>
-  );
+  return <Todo />;
 }
 
-export default App;
+export default withProviders(App);
