@@ -14,13 +14,13 @@
 ## Junior+
 
 - [x] Character limit for todo
-- [ ] Toggling todo `completed/uncompleted`
+- [x] Toggling todo `completed/uncompleted`
 - [x] Feature-sliced design
-- [ ] Add view-mode table/cards
+- [x] Add view-mode table/cards
 
 ## Middle
 
-- [ ] Filtering todo by `completed/uncompleted`
+- [x] Filtering todo by `completed/uncompleted`
 - [ ] Counter for `completed/uncompleted`
 - [ ] Pagination
 

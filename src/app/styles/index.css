@@ -12,6 +12,7 @@
 
   /* Sizing */
   --container-width: 840px;
+  --card-container-width: 1000px;
 
   /* Colors */
   --foreground: #282828;
@@ -64,6 +65,22 @@ button {
   margin-top: 5rem;
   margin-inline: auto;
   display: flow-root;
+  box-shadow: 10px 10px black;
+}
+
+.card-container {
+  width: var(--card-container-width);
+  margin-top: 5rem;
+  margin-inline: auto;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.card {
+  padding: 1rem;
+  background-color: var(--blue);
   box-shadow: 10px 10px black;
 }
 
