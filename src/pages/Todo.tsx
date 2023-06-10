@@ -7,13 +7,17 @@ const Todo = () => {
   const todos = useSelector(todosSelector);
 
   return (
-    <div className="container lined-blue">
-      <h1 className="center underline">Todo</h1>
-      <CreateTodo />
-      {todos.map((todo, i) => (
-        <TodoRow text={todo.text} id={i} key={i} />
-      ))}
-    </div>
+    <>
+      <div className="p-1 bg-blue">dfkj</div>
+
+      <div className="container">
+        <h1 className="center">TODO</h1>
+        <CreateTodo />
+        {todos.map((todo, i) => (
+          <TodoRow text={todo.text} id={i} key={i} />
+        ))}
+      </div>
+    </>
   );
 };
 

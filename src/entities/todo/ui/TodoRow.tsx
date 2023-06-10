@@ -7,7 +7,7 @@ type Props = {
 
 const TodoRow: React.FC<Props> = ({ text, id }) => {
   return (
-    <div className="flex p-1 lined-red space-between">
+    <div className="flex p-1 space-between todo-row">
       {text} <RemoveTodo id={id} />
     </div>
   );

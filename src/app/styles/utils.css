@@ -20,6 +20,14 @@
   display: block;
 }
 
+.no-border {
+  border: none;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
 /* Text */
 .center {
   text-align: center;

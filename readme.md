@@ -8,14 +8,14 @@
 
 - [x] Create todo
 - [x] Todo list
-- [ ] Remove todos
-- [ ] Use state manager
+- [x] Remove todos
+- [x] Use state manager
 
 ## Junior+
 
-- [ ] Character limit for todo
+- [x] Character limit for todo
 - [ ] Toggling todo `completed/uncompleted`
-- [ ] Feature-sliced design
+- [x] Feature-sliced design
 - [ ] Add view-mode table/cards
 
 ## Middle
@@ -23,7 +23,6 @@
 - [ ] Filtering todo by `completed/uncompleted`
 - [ ] Counter for `completed/uncompleted`
 - [ ] Pagination
-- [ ] Toggling todo lifecycle `todo/doing/done`
 
 ## Middle+
 

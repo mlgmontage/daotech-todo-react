@@ -7,11 +7,27 @@
 /* Variables for customizing design */
 :root {
   --ff: "Courier New", Courier, monospace;
-  --fsecondary: "Times New Roman", Times, serif;
+  --fsecondary: Times, serif;
   --fz: 20px;
 
   /* Sizing */
   --container-width: 840px;
+
+  /* Colors */
+  --foreground: #282828;
+  --bg: #fbf1c7;
+  --red: #cc2412;
+  --green: #98971a;
+  --yellow: #d79921;
+  --blue: #458598;
+  --purple: #b16286;
+  --aqua: #689d6a;
+  --orange: #d65d0e;
+  --gray: #7c6f64;
+}
+
+.bg-blue {
+  background-color: var(--aqua);
 }
 
 body {
@@ -19,20 +35,35 @@ body {
   padding: 0;
   font-size: var(--fz);
   font-family: var(--ff);
+  color: var(--foreground);
+  background-color: var(--bg);
 }
 
 input,
 textarea,
 button {
+  background-color: transparent;
   font-family: inherit;
   font-size: var(--fz);
 }
 
+button {
+  cursor: pointer;
+  border: 1px solid var(--foreground);
+  border-radius: 3px;
+}
+
 .container {
   width: var(--container-width);
+  background-color: var(--blue);
   margin-top: 5rem;
   margin-inline: auto;
   display: flow-root;
+  box-shadow: 10px 10px black;
+}
+
+.todo-row {
+  border-top: 1px solid var(--foreground);
 }
 
 h1,
@@ -43,5 +74,3 @@ h5,
 h6 {
   font-family: var(--fsecondary);
 }
-
-/* Fields */

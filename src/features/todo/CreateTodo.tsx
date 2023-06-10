@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { createtodo } from "../../entities/todo/model";
+import { textLimit } from "../../shared/config";
 
 const CreateTodo = () => {
   const dispatch = useDispatch();
@@ -15,9 +16,14 @@ const CreateTodo = () => {
       }}
     >
       <input
-        className="block p-1 w-full"
+        className="block p-1 w-full no-border"
+        placeholder="Write something to do..."
         value={input}
-        onChange={(e) => setInput(e.target.value)}
+        onChange={(e) => {
+          if (e.target.value.length < textLimit) {
+            setInput(e.target.value);
+          }
+        }}
       />
     </form>
   );
