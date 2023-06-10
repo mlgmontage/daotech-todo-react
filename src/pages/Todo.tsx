@@ -11,11 +11,12 @@ import TodoCard from "../entities/todo/ui/TodoCard";
 import TodoCounter from "../entities/todo/ui/TodoCounter";
 import usePagination from "../shared/hooks/usePagination";
 import { generateArray } from "../shared/functions";
+import { pageLimit } from "../shared/config";
 
 const Todo = () => {
   const todos = useSelector(todosFilteredSelector);
   const mode = useSelector(todosModeSelector);
-  const pages = usePagination(todos, 2);
+  const pages = usePagination(todos, pageLimit);
 
   return (
     <>

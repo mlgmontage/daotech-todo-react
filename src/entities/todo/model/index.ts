@@ -1,21 +1,7 @@
 import { createSelector, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../../../app/store";
 import { useSelector } from "react-redux";
-
-type TodoT = {
-  id: number;
-  text: string;
-  done: boolean;
-};
-
-type ViewT = "all" | "todo" | "done";
-type ModeT = "list" | "card";
-
-type TodoState = {
-  todos: TodoT[];
-  view: ViewT;
-  mode: ModeT;
-};
+import { TodoState, ViewT, ModeT } from "./types";
 
 const initialState: TodoState = {
   todos: [
