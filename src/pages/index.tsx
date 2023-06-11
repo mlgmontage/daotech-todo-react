@@ -8,9 +8,10 @@ const Routing = () => {
 
   return (
     <>
-      {detailsModal.show && (
+      {/* NOTE: zero is false in TS */}
+      {detailsModal.show && detailsModal.id !== undefined && (
         <div className="overlay">
-          <TodoDetails />
+          <TodoDetails id={detailsModal.id} />
         </div>
       )}
       <Todo />

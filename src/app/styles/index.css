@@ -30,6 +30,7 @@
 
 .modal {
   width: var(--modal-with);
+  padding: 1rem;
   box-shadow: 10px 10px black;
   background-color: var(--purple);
 }
