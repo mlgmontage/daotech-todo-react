@@ -13,6 +13,7 @@
   /* Sizing */
   --container-width: 840px;
   --card-container-width: 1000px;
+  --modal-with: 600px;
 
   /* Colors */
   --foreground: #282828;
@@ -27,6 +28,12 @@
   --gray: #7c6f64;
 }
 
+.modal {
+  width: var(--modal-with);
+  box-shadow: 10px 10px black;
+  background-color: var(--purple);
+}
+
 .bg-blue {
   background-color: var(--aqua);
 }
@@ -34,10 +41,12 @@
 body {
   margin: 0;
   padding: 0;
+  position: relative;
   font-size: var(--fz);
   font-family: var(--ff);
   color: var(--foreground);
   background-color: var(--bg);
+  min-height: 100vh;
 }
 
 input,
@@ -91,6 +100,15 @@ button {
 
 .todo-row {
   border-top: 1px solid var(--foreground);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background-color: hsla(0, 0%, 0%, 30%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 h1,

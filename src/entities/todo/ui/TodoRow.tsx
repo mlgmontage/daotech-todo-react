@@ -1,3 +1,4 @@
+import OpenDetails from "../../../features/todo/OpenDetails";
 import RemoveTodo from "../../../features/todo/RemoveTodo";
 import ToggleTodo from "../../../features/todo/ToggleTodo";
 
@@ -13,6 +14,7 @@ const TodoRow: React.FC<Props> = ({ text, id }) => {
     <div className="flex p-1 gap-1 items-center space-between todo-row">
       <ToggleTodo id={id} />
       <div className="flex-1">{text}</div>
+      <OpenDetails />
       <RemoveTodo id={id} />
     </div>
   );

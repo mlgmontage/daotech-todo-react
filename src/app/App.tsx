@@ -1,8 +1,8 @@
-import Todo from "../pages/Todo";
 import { withProviders } from "./providers/with-providers";
+import Routing from "../pages";
 
-function App() {
-  return <Todo />;
-}
+const App = () => {
+  return <Routing />;
+};
 
 export default withProviders(App);
