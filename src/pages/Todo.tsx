@@ -12,6 +12,7 @@ import TodoCounter from "../entities/todo/ui/TodoCounter";
 import usePagination from "../shared/hooks/usePagination";
 import { generateArray } from "../shared/functions";
 import { pageLimit } from "../shared/config";
+import { TodoT } from "../entities/todo/model/types";
 
 const Todo = () => {
   const todos = useSelector(todosFilteredSelector);
@@ -32,8 +33,8 @@ const Todo = () => {
         <div className="container">
           <h1 className="center">TODO</h1>
           <CreateTodo />
-          {pages.sliced.map((todo: any) => (
-            <TodoRow text={todo.text} id={todo.id} key={todo.id} />
+          {pages.sliced.map((todo: TodoT) => (
+            <TodoRow todo={todo} key={todo.id} />
           ))}
 
           <div className="flex justify-center p-1 gap-1">

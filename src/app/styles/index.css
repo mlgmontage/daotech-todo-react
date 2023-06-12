@@ -103,6 +103,18 @@ button {
   border-top: 1px solid var(--foreground);
 }
 
+.todo-row-regular {
+  background-color: var(--blue);
+}
+
+.todo-row-low {
+  background-color: var(--green);
+}
+
+.todo-row-high {
+  background-color: var(--red);
+}
+
 .overlay {
   position: absolute;
   inset: 0;

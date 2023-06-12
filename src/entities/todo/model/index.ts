@@ -5,8 +5,27 @@ import { TodoState, ViewT, ModeT } from "./types";
 
 const initialState: TodoState = {
   todos: [
-    { id: 0, text: "write some code", done: true },
-    { id: 1, text: "wash dishes", done: false },
+    {
+      id: 0,
+      text: "write some code",
+      done: false,
+      level: "regular",
+      start: Date.now(),
+    },
+    {
+      id: 1,
+      text: "wash dishes",
+      done: false,
+      start: Date.now(),
+      level: "low",
+    },
+    {
+      id: 1,
+      text: "wash dishes",
+      done: false,
+      start: Date.now(),
+      level: "high",
+    },
   ],
   view: "all",
   mode: "list",
@@ -18,7 +37,13 @@ const todoSlice = createSlice({
   reducers: {
     createtodo: (state, { payload }: PayloadAction<string>) => {
       const id = state.todos.length;
-      state.todos.unshift({ id, text: payload, done: false });
+      state.todos.unshift({
+        id,
+        text: payload,
+        done: false,
+        level: "regular",
+        start: Date.now(),
+      });
     },
     removetodo: (state, { payload }: PayloadAction<number>) => {
       const i = state.todos.findIndex((todo) => todo.id === payload);
