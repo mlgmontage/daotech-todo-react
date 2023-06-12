@@ -54,6 +54,10 @@
   width: 100%;
 }
 
+.text-lg {
+  font-size: var(--lg-text);
+}
+
 /* Spacing */
 .p-1 {
   padding: 1rem;

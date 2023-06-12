@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { useTodo } from "../../entities/todo/model";
+import { settodotext, useTodo } from "../../entities/todo/model";
 import { setdetailsmodal } from "../../entities/UI/model";
 import ToggleTodo from "../../features/todo/ToggleTodo";
 import SwitchLevel from "../../features/todo/SwitchLevel";
@@ -19,7 +19,14 @@ const TodoDetails: React.FC<Props> = ({ id }) => {
       <small>{new Date(todo.start).toLocaleString()}</small>
       <h1 className="center">DETAILS</h1>
       {todo.end && <small>{new Date(todo.end).toLocaleString()}</small>}
-      <h2>{todo?.text}</h2>
+
+      <input
+        type="text"
+        className="block p-1 w-full no-border text-lg"
+        value={todo.text}
+        onChange={(ev) => dispatch(settodotext({ id, text: ev.target.value }))}
+      />
+
       <div>
         <ToggleTodo id={id} />
         {todo?.done ? "completed" : "todo"}

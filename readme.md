@@ -30,7 +30,7 @@ This is part of _advent of todo_ serie where I implement same app with different
   - [ ] Description
   - [x] End date
   - [x] Start date (readonly)
-- [ ] Update todo
+- [x] Update todo
 
 ## Middle+
 

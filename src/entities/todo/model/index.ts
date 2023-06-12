@@ -74,6 +74,13 @@ const todoSlice = createSlice({
       const i = state.todos.findIndex((todo) => todo.id === payload.id);
       state.todos[i].level = payload.level;
     },
+    settodotext: (
+      state,
+      { payload }: PayloadAction<{ id: number; text: string }>
+    ) => {
+      const i = state.todos.findIndex((todo) => todo.id === payload.id);
+      state.todos[i].text = payload.text;
+    },
   },
 });
 
@@ -85,6 +92,7 @@ export const {
   setmode,
   setview,
   setlevel,
+  settodotext,
 } = todoSlice.actions;
 
 export const todosFilteredSelector = (state: RootState) => {
