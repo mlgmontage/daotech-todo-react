@@ -12,11 +12,18 @@ const TodoDetails: React.FC<Props> = ({ id }) => {
   const dispatch = useDispatch();
   const todo = useTodo(id);
 
+  if (!todo) return <div>Panic: Cannot find todo</div>;
+
   return (
     <div className="modal">
+      <small>{new Date(todo.start).toLocaleString()}</small>
       <h1 className="center">DETAILS</h1>
+      {todo.end && <small>{new Date(todo.end).toLocaleString()}</small>}
       <h2>{todo?.text}</h2>
-      <ToggleTodo id={id} />
+      <div>
+        <ToggleTodo id={id} />
+        {todo?.done ? "completed" : "todo"}
+      </div>
       <SwitchLevel id={id} />
       <button onClick={() => dispatch(setdetailsmodal({ show: false }))}>
         close

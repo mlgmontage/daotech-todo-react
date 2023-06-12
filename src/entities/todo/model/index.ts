@@ -51,7 +51,15 @@ const todoSlice = createSlice({
     },
     toggletodo: (state, { payload }: PayloadAction<number>) => {
       const i = state.todos.findIndex((todo) => todo.id === payload);
-      state.todos[i].done = !state.todos[payload].done;
+      const done = state.todos[i].done;
+      if (done) {
+        // Removing end date
+        state.todos[i].done = false;
+        state.todos[i].end = undefined;
+      } else {
+        state.todos[i].done = true;
+        state.todos[i].end = Date.now();
+      }
     },
     setview: (state, { payload }: PayloadAction<ViewT>) => {
       state.view = payload;

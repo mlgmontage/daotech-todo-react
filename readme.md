@@ -28,7 +28,7 @@ This is part of _advent of todo_ serie where I implement same app with different
 - [x] Todo details
   - [x] Importance level
   - [ ] Description
-  - [ ] End date
+  - [x] End date
   - [x] Start date (readonly)
 - [ ] Update todo
 
