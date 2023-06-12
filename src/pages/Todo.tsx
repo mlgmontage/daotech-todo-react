@@ -34,7 +34,7 @@ const Todo = () => {
           <h1 className="center">TODO</h1>
           <CreateTodo />
           {pages.sliced.map((todo: TodoT) => (
-            <TodoRow todo={todo} key={todo.id} />
+            <TodoRow id={todo.id} key={todo.id} />
           ))}
 
           <div className="flex justify-center p-1 gap-1">

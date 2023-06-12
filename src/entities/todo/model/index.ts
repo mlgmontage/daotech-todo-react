@@ -1,7 +1,7 @@
 import { createSelector, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../../../app/store";
 import { useSelector } from "react-redux";
-import { TodoState, ViewT, ModeT } from "./types";
+import { TodoState, ViewT, ModeT, LevelT } from "./types";
 
 const initialState: TodoState = {
   todos: [
@@ -20,7 +20,7 @@ const initialState: TodoState = {
       level: "low",
     },
     {
-      id: 1,
+      id: 2,
       text: "wash dishes",
       done: false,
       start: Date.now(),
@@ -59,12 +59,25 @@ const todoSlice = createSlice({
     setmode: (state, { payload }: PayloadAction<ModeT>) => {
       state.mode = payload;
     },
+    setlevel: (
+      state,
+      { payload }: PayloadAction<{ id: number; level: LevelT }>
+    ) => {
+      const i = state.todos.findIndex((todo) => todo.id === payload.id);
+      state.todos[i].level = payload.level;
+    },
   },
 });
 
 export default todoSlice.reducer;
-export const { createtodo, removetodo, toggletodo, setmode, setview } =
-  todoSlice.actions;
+export const {
+  createtodo,
+  removetodo,
+  toggletodo,
+  setmode,
+  setview,
+  setlevel,
+} = todoSlice.actions;
 
 export const todosFilteredSelector = (state: RootState) => {
   if (state.todos.view === "todo")

@@ -26,10 +26,10 @@ This is part of _advent of todo_ serie where I implement same app with different
 - [x] Filtering todo by `completed/uncompleted`
 - [x] Pagination
 - [x] Todo details
-  - [ ] Importance level
+  - [x] Importance level
   - [ ] Description
   - [ ] End date
-  - [ ] Start date (readonly)
+  - [x] Start date (readonly)
 - [ ] Update todo
 
 ## Middle+

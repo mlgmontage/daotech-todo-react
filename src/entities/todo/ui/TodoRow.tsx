@@ -1,23 +1,25 @@
 import OpenDetails from "../../../features/todo/OpenDetails";
 import RemoveTodo from "../../../features/todo/RemoveTodo";
 import ToggleTodo from "../../../features/todo/ToggleTodo";
-import { TodoT } from "../model/types";
+import { useTodo } from "../model";
 
 // WARNING: This component might break the fsd convention but find it more convinient to use features here
 
 type Props = {
-  todo: TodoT;
+  id: number;
 };
 
-const TodoRow: React.FC<Props> = ({ todo }) => {
+const TodoRow: React.FC<Props> = ({ id }) => {
+  const todo = useTodo(id);
+
   return (
     <div
-      className={`flex p-1 gap-1 items-center space-between todo-row todo-row-${todo.level}`}
+      className={`flex p-1 gap-1 items-center space-between todo-row todo-row-${todo?.level}`}
     >
-      <ToggleTodo id={todo.id} />
-      <div className="flex-1">{todo.text}</div>
-      <OpenDetails id={todo.id} />
-      <RemoveTodo id={todo.id} />
+      <ToggleTodo id={id} />
+      <div className="flex-1">{todo?.text}</div>
+      <OpenDetails id={id} />
+      <RemoveTodo id={id} />
     </div>
   );
 };
